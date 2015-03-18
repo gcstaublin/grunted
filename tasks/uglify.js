@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-	var jsFiles = ['static/js/test.js', 'static/js/test2.js'];
+	var jsFiles = ['<%= pkg.jsDir %>/test.js', '<%= pkg.jsDir %>/test2.js'];
+
 	grunt.config('uglify', {
 		options: {
 			banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -14,7 +15,7 @@ module.exports = function(grunt) {
 				  }
 			},
 			files: {
-			   'static/js/test.min.js' : jsFiles
+			   '<%= pkg.jsDir %>/site.js': jsFiles
 			}
 		},
 		// Dev
@@ -25,7 +26,7 @@ module.exports = function(grunt) {
 			  mangle: false
 			},
 			files: {
-			  'static/js/test.min.js' : jsFiles
+			  '<%= pkg.jsDir %>/site.js': jsFiles
 			}
 		}
 

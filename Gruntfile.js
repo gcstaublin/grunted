@@ -7,8 +7,8 @@ module.exports = function (grunt) {
   grunt.loadTasks('tasks');
 
   //register tasks
-  grunt.registerTask('dist', ['uglify:dist', 'sass:dist', 'prefix']);
-  grunt.registerTask('dev', ['uglify:dev', 'sass:dev', 'prefix']);
+  grunt.registerTask('dist', ['uglify:dist', 'sass:dist', 'autoprefixer']);
+  grunt.registerTask('dev', ['uglify:dev', 'sass:dev', 'autoprefixer']);
   grunt.registerTask('prefix', ['autoprefixer']);
   grunt.registerTask('svg', ['svgstore']);
   grunt.registerTask("serve", ["shell:jekyllServe"]);

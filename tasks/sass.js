@@ -7,22 +7,23 @@ module.exports = function(grunt) {
 		dist: {
 			options: {
 			  style: 'compressed',
-			  sourcemap: 'none'
+			  sourcemap: 'auto'
 			},
 			files: {
-			  'static/css/screen.css': 'static/scss/screen.scss'
+			  '<%= pkg.cssDir %>/screen-unprefix.css': '<%= pkg.scssDir %>/screen.scss'
 			}
 		},
 		// Dev
 		dev: {
 			options: {
 			  style: 'expanded',
-			  sourcemap: 'none'
+			  sourcemap: 'auto'
 			},
 			files: {
-			  'static/css/screen.css' : 'static/scss/screen.scss'
+			  '<%= pkg.cssDir %>/screen-unprefix.css': '<%= pkg.scssDir %>/screen.scss'
 			}
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
 };
+

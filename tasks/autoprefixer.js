@@ -11,12 +11,10 @@ module.exports = function(grunt) {
 			options: {
 			  // Target-specific options go here.
 			},
-			src: 'static/css/screen.css',
-			dest: 'static/css/screen-prefix.css'
+			src: '<%= pkg.cssDir %>/screen-unprefix.css',
+			dest: '<%= pkg.cssDir %>/screen.css'
 		}
 	});
 	grunt.loadNpmTasks('grunt-autoprefixer');
 };
-
-
 
